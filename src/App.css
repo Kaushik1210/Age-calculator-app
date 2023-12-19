@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+*{    
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calculator{
+    background-color: var(--White);
+    width: 430px;
+    padding: 30px;
+    border-radius: 15px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.06);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form{
+    display: flex;
+    border-bottom: 0.8px solid hsl(0, 0%, 86%);
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+    position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+label{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    font-family: var(--font-popins);
+    color: var(--Smokeygrey);
+    font-size: 10px;
+    letter-spacing: 2px;
+    position: relative;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input{
+    margin-top: 3px;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-family: var(--font-popins);
+    text-indent: 10px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid hsl(0, 0%, 86%);
+    color: var(--Offblack);
+    outline: none;
+    appearance: none;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+}
+
+
+input:focus{
+    border: 1px solid hsl(259, 100%, 65%);
+}
+
+.invalid{
+    border: 1px solid hsl(0, 100%, 67%);
+}
+
+.error-label{
+    color: var(--Lightred);
+}
+
+img{
+    width: 30px;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+    border-radius: 55px;
+    background-color: var(--Purple);
+    border: none;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--Offblack);
+}
+
+.output{
+    font-family: var(--font-popins);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 35px;
+    line-height:1.1;
+    
+}
+
+span{
+    color: var(--Purple);
+    font-size: 65px;
+}
+
+.error{
+    font-style: italic;
+    letter-spacing: 0px;
+    font-size: 9px;
+    color: var(--Lightred);
+    margin-top: 10px;   
+    line-height: 1;
+}
+
+
+@media screen and (max-width:500px) {
+    
+    
+    
+    .calculator{
+        width: 320px;
+    }
+    form{
+        padding-bottom: 60px;
+        column-gap: 10px;
+    }
+    button{
+        transition: 0.3s ease-in-out;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        bottom: -50px;
+    }
+
+    label{
+        margin-right: 0;
+        
+    }
+
+    input{
+        width: 100%;
+        
+        font-size: 22px;
+    }
+    .output{
+        padding: 20px 0px;
+        font-size: 25px;
+    }
+    span{
+        font-size: 55px;
+    }
+    .error{
+        font-size: 10px;
+        
+    }
+
+    
+}
+
+@media screen and (max-width:420px) {
+    .calculator{
+        width: 250px;
+    }
+
+    .output{
+        
+        font-size: 15px;
+    }
+    span{
+        font-size: 45px;
+    }
+    form{
+        flex-direction: column;
+    }
+    label{
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width:300px) {
+    .calculator{
+        width: 200px;
+    }
+
+    
 }
